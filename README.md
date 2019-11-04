@@ -1,6 +1,12 @@
-# su
+# 云顶之弈资料库
 
-> A Vue.js project
+> vue全家桶练手项目
+已增加功能：
+·装备合成
+·棋子数据查询（即将完成）
+·冷门技巧
+
+
 
 ## Build Setup
 
@@ -11,20 +17,4 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
