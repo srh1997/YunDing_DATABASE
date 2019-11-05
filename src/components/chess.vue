@@ -3,7 +3,7 @@
 <!--  <img src="../assets/chess.jpg" alt="">-->
     <span>筛选条件：</span>
     <span>卡费：</span>
-    <select>
+    <select v-model="charge">
     <option value="#"></option>
     <option value="1">1费</option>
     <option value="2">2费</option>
@@ -12,7 +12,7 @@
     <option value="5">5费</option>
   </select>
     <span>种族：</span>
-    <select>
+    <select v-model="race_id">
       <option value="#"></option>
       <option value="1">恶魔</option>
       <option value="2">龙</option>
@@ -30,7 +30,7 @@
       <option value="14">狂野</option>
     </select>
     <span>职业：</span>
-    <select>
+    <select v-model="vocation_id">
       <option value="#"></option>
       <option value="1">剑士</option>
       <option value="2">斗士</option>
@@ -45,15 +45,26 @@
 
 
     </select>
-    <div>种族羁绊：{{msg}}</div>
+    <div v-if="race_id>0">种族羁绊：{{this.$store.state.raceList[race_id].name}}:{{this.$store.state.raceList[race_id].intro}}</div>
+    <div v-if="vocation_id>0">职业羁绊：{{this.$store.state.vocationList[vocation_id].name}}：{{this.$store.state.vocationList[vocation_id].intro}}</div>
+
 
   </div>
 </template>
 
 <script>
     export default {
-        name: "chess"
+        name: "chess",
+      data:function () {
+        return {
+          race_id:0,
+          vocation_id:0,
+          charge:0
+
+        }
+      }
     }
+    console.log(this);
 </script>
 
 <style scoped>
