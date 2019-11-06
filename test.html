@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+      <img :src='url'>
+</div>
+</body>
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      url:"./src/assets/chess.jpg"
+    }
+  })
+</script>
+</html>
