@@ -44,11 +44,10 @@
           race_id:0,
           vocation_id:0,
           charge:0,
-          raceList:['','剧毒','炼狱','林地','海洋','沙漠','钢铁','电能','山脉','风','光','暗','水晶'],
-          vocationList:['','剑士','炼金师','守护神','掠食者','狂战士','秘术','游侠','德鲁伊','法师','刺客','化身','召唤使'],
+          raceList:['','剧毒','地狱火','森林','海洋','沙漠','钢铁','雷霆','山脉','云霄','光','影','水晶','极地'],
+          vocationList:['','剑士','炼金师','守护神','掠食者','狂战士','秘术','游侠','德鲁伊','魔法师','刺客','?随机','召唤使','大元素使'],
           chargeList:['',1,2,3,4,5],
           chess_data:this.$store.state.chess_data,
-          url:'../../static/img/chess.jpg'
         }
       },
 
@@ -71,9 +70,9 @@
   .chess_card{
     text-align: left;
     margin-top: 10px;
-    border: 1px solid black;
+    border: 3px solid deepskyblue;
     padding: 10px;
-    background-color: lightgreen;
-    color: black;
+    background-color: black;
+    color: white;
   }
 </style>
