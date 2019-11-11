@@ -1,6 +1,6 @@
 <template>
   <div id="merge">
-    <img src="../assets/merge.jpg" alt="">
+    <img src="../assets/merge.png" alt="">
   </div>
 
 </template>
