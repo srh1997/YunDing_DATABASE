@@ -27,13 +27,13 @@
              :style="{'border':'7px solid '+getColor(chess.charge)}">
           <img :src='"../../static/img/"+chess.name+".jpg"' width="100%">
           {{chess.name}}<br/>
-          元素：<span @mouseover="toggle()">{{chess.race}}</span><br>
-          职业：<span @mousemove="toggle()">{{chess.vocation}}</span><br>
+          元素：<span @mouseenter="toggleRace(chess.race)"  @mouseleave="showIntro=false">{{chess.race}}</span><br>
+          职业：<span @mouseenter="toggleVoc(chess.vocation)" @mouseleave="showIntro=false">{{chess.vocation}}</span><br>
           费用：${{chess.charge}}<br/>
           技能：{{chess.skill}}<br>
         </div>
     </div>
-
+    <div id="insertIntro" v-if="showIntro">{{intro}}</div>
 
   </div>
 </template>
@@ -51,7 +51,9 @@
           chargeList:['',1,2,3,4,5,7],
           chess_data:this.$store.state.chess_data,
           raceList:this.$store.state.raceList,
-          vocationList:this.$store.state.vocationList
+          vocationList:this.$store.state.vocationList,
+          intro:'',
+          showIntro:false
         }
       },
       methods:{
@@ -72,8 +74,19 @@
             }
             return bg_color;
           },
-        toggle:function () {
-          console.log('Move');
+        toggleRace:function (race) {
+          this.intro='';
+          for(let k of this.raceList){
+            if(k.name && race.includes(k.name))this.intro+=(k.name+':'+k.intro+' \n ');
+          };
+          this.showIntro=true;
+        },
+        toggleVoc:function (vocation) {
+            this.intro='';
+          for(let k of this.vocationList){
+            if(k.name && vocation.includes(k.name))this.intro+=(k.name+':'+k.intro+' \n ');
+          };
+          this.showIntro=true;
         }
 
       }
@@ -103,5 +116,17 @@
     background-color: black;
     color: white;
 
+  }
+  #insertIntro {
+    background: #e7e7e7;
+    border: 2px solid #555555;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-50%);
   }
 </style>

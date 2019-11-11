@@ -1,0 +1,39 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<div id="app" onmousemove="toggle(event)" onmouseleave="mouseleave()">
+  鼠标挪到这里
+</div>
+<div id="msg">展示的内容</div>
+</body>
+</html>
+<script>
+  var msg=document.getElementById('msg');
+  function toggle(e) {
+      msg.style.position='fixed';
+      msg.style.display='block';
+      msg.style.left=e.pageX+'px';
+      msg.style.top=e.pageY+'px';
+  }
+  function mouseleave() {
+    msg.style.display='none';
+  }
+  console.log('ssada'.includes(''));
+</script>
+<style>
+#app {
+  width: 100px;
+  height: 100px;
+  background:red;
+  color: white;
+}
+  #msg {
+    display: none;
+    width: 100px;
+    height: 20px;
+    background: #aaaaaa;
+  }
+
+</style>
